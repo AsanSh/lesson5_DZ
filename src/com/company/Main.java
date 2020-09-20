@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
-
 public class Main {
 
     /*
@@ -43,14 +41,16 @@ public class Main {
         superMan.setDefence("immortal");
         System.out.println(superMan.getHealth() + " " + superMan.getDamage() + " " + superMan.getDefence());
 
-        Hero[] newMass;
-        newMass = createHeroes();
-        System.out.println(Arrays.toString(newMass));
-        System.out.println("++++++++++++++++++++++++++++++++++++++++");
-        tanos = createHeroes()[0];
-        System.out.println(tanos);
-        System.out.println("++++++++++++++++++++++++++++++++++++++++");
+        System.out.println("------------------------------------------------------");
+        createHeroes();
+        for (Hero hero : createHeroes()) {
+            System.out.println(hero.getHealth());
+            System.out.println(hero.getDamage());
+            System.out.println(hero.getSuperPower());
+            System.out.println("------------------------------------------------------");
+        }
     }
+
     public static Hero[] createHeroes() {
         System.out.println("Герой _ 1 _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
         Hero hero1 = new Hero(100, "Strenght", 500);

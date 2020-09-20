@@ -4,8 +4,6 @@ public class Boss {
     private int health, damage;
     private String defence;
 
-
-
     public int getHealth() {
         return health;
     }
