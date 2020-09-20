@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Main {
 
     /*
@@ -12,8 +14,10 @@ public class Main {
 
     ДЗ на сообразительность:
     Добавить метод в классе Main который называется createHeroes, в теле метода необходимо создать 3х героев с помощью класса Hero,
-    используя при этом разные варианты конструкторов (либо первый либо второй). Затем поместить созданные экземпляры героев в массив и
+    используя при этом разные варианты конструкторов (либо первый либо второй).
+    Затем поместить созданные экземпляры героев в массив и
     вернуть его с помощью команды return, как возвращаемый результат метода createHeroes.
+
     Затем вызвать этот метод в методе main и распечатать информацию о всех героях массива через цикл.
     Дэдлайн 20.09.2020 23 59
     */
@@ -33,8 +37,39 @@ public class Main {
         System.out.println(thor.getHealth() + " " + thor.getDamage());
         System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
 
-        Boss superMan = new Boss(500, 1900, "immortal");
+        Boss superMan = new Boss();
+        superMan.setDamage(900);
+        superMan.setHealth(999);
+        superMan.setDefence("immortal");
         System.out.println(superMan.getHealth() + " " + superMan.getDamage() + " " + superMan.getDefence());
+
+        Hero[] newMass;
+        newMass = createHeroes();
+        System.out.println(Arrays.toString(newMass));
+        System.out.println("++++++++++++++++++++++++++++++++++++++++");
+        tanos = createHeroes()[0];
+        System.out.println(tanos);
+        System.out.println("++++++++++++++++++++++++++++++++++++++++");
+    }
+    public static Hero[] createHeroes() {
+        System.out.println("Герой _ 1 _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+        Hero hero1 = new Hero(100, "Strenght", 500);
+        System.out.println(hero1.getHealth() + " " + hero1.getSuperPower() + " " + hero1.getDamage());
+
+        System.out.println("Герой _ 2 _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+        Hero hero2 = new Hero(300, "Magic", 1000);
+        System.out.println(hero2.getHealth() + " " + hero2.getSuperPower() + " " + hero2.getDamage());
+
+        System.out.println("Герой _ 3 _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+        Hero hero3 = new Hero(2000, 1500);
+        System.out.println(hero3.getHealth() + " " + hero3.getDamage());
+
+        Hero[] allHeroes = {hero1, hero2, hero3};
+        System.out.println(allHeroes[0]);
+        return allHeroes;
     }
 }
+
+
+
 
